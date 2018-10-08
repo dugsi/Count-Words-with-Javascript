@@ -1,0 +1,25 @@
+<html>
+<head>
+<title>How to count words with Javascript</title>
+
+</head>
+<body>
+    
+<form name="form1" method="post" action="">
+  <textarea name="inputString" id="inputString" cols="50" rows="4">With this code, you learn how many words are in a document using javascript. The count is shown on load</textarea>
+<br>
+<input type="button" name="Convert" value="Count Words" onclick="countWords();"> 
+<input name="wordcount" id="wordcount" type="text" value="countWords();" size="6">
+</form>
+    
+<script>
+ function countWords(){
+	s = document.getElementById("inputString").value;
+	s = s.replace(/(^\s*)|(\s*$)/gi,"");
+	s = s.replace(/[ ]{2,}/gi," ");
+	s = s.replace(/\n /,"\n");
+	document.getElementById("wordcount").value = s.split(' ').length;
+}
+</script>
+</body>
+</html>
